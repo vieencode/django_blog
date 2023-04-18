@@ -40,11 +40,11 @@ I use GitHub for version control and code storage. I like to follow the issue br
 I started using Django in 2021 and the book by Antonio Mele - "Django 3 By Example" has been a great ressource. The first couple chapters focus on the basics and provide a great starting point for creating a blog web application. 
 
 ### Gallery
+<p align="center">
+<img src="https://user-images.githubusercontent.com/122187083/232651649-8892c79b-580b-42b7-a9f3-eed42860a767.png" width="750" height="450">
 
-![blog_list](https://user-images.githubusercontent.com/122187083/232651649-8892c79b-580b-42b7-a9f3-eed42860a767.png)
+<img src="https://user-images.githubusercontent.com/122187083/232652162-3d00067b-9a2a-4a6b-b0ae-b01c221f982a.png" width="750" height="550">
 
-![search](https://user-images.githubusercontent.com/122187083/232652162-3d00067b-9a2a-4a6b-b0ae-b01c221f982a.png)
-
-![blogpost](https://user-images.githubusercontent.com/122187083/232652375-973c961c-ea96-46eb-a154-90431d00eaea.png)
-
+<img src="https://user-images.githubusercontent.com/122187083/232652375-973c961c-ea96-46eb-a154-90431d00eaea.png" width="750" height="550">
+</p>
 
