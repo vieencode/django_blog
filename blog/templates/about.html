@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+{% block title %} About {% endblock %}
+{% block content %}
+
+<p class="text-justify">
+Welcome! This blog is a collection of code snippets and ideas. 
+Hope you find something that helps or inspires you. 
+As a bioinformatician I am often on the search for solutions or ideas to solve very specific problems. 
+I am sharing code examples, cheatsheets and walkthroughs for many different topics, for example: 
+</p>     
+
+I am happy to hear from you! Feel free to reach out with your feedback/questions at <strong>vieencode@gmail.com</strong>!
+
+<br>
+<br>
+
+This blog has a total of {% total_posts %} Posts. Check out my latest Posts:<br>
+{% show_latest_posts 3 %}
+
+<p class="text-center">
+    <a href="{% url "blog:post_feed" %}" class="btn btn-light">Subscribe to my RSS feed!</a>
+</p>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load blog_tags %}
+{% block title %} Posts {% endblock %}
+{% block content %}
+
+
+
+{% for tag in post_tags %}
+<a href="{% url "blog:post_list_by_tag" tag.slug %}" class="btn btn-light">
+  #{{ tag.name }}
+</a>
+{% endfor %}
+<a href="{% url 'blog:post_list' %}" class="btn btn-light">
+  show all
+</a>
+
+<a href="{% url 'blog:post_list' %}" class="btn btn-light" data-toggle="collapse" data-target="#search" aria-expanded="false" aria-controls="search">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+  </svg>
+</a>
+<br>
+
+<div class="collapse" id="search">
+  <div class="card card-body">
+    <form method="get">
+      {{ form|crispy }}
+  </form>  
+</div>
+</div>
+<br>
+
+{% if query or tag %}
+<small>
+    <p style="color:grey;">
+      {% with posts|length as total_results %}
+        {% if total_results == 0 %}
+          There are no results for your search.
+        {% else %}
+          {{ total_results }} result{{ total_results|pluralize }}
+        {% endif %}
+      {% endwith %}
+    </p>
+</small>
+{% endif %}
+
+{% for post in posts %}
+  <a class="post_title" href="{{ post.get_absolute_url }}">{{ post.title }}</a><br>
+  <small>
+    {{ post.created.date }} | {{ post.read_time }} min. read |
+    {% for tag in post.tags.all %}
+    <a href="{% url "blog:post_list_by_tag" tag.slug %}" class="btn btn-light post_tag">
+      #{{ tag.name }}
+    </a>
+    {% if not forloop.last %} {% endif %}
+    {% endfor %}
+  </small>  
+  <p>{{ post.body|markdown|truncatewords_html:30 }}</p>
+
+
+{% endfor %}
+
+{% if not posts|length == 0 %}
+{% include "pagination.html" with page=posts %}
+{% endif %}
+{% endblock %}

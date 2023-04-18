@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+{% block title %} Tech Specs {% endblock %}
+{% block content %}
+
+
+<p class="post_title">Skeleton</p>
+<p class="text-justify">This blog was built using Django, a Python-based web framework for the development of web applications and 
+    is linked with a PostgreSQL database for data storage.
+    I decided to use Summernote as the text editor, 
+    because it allows to create and edit posts using the Django admin framework and makes it easy to insert code snippets, embed images and links.</p>
+
+<p class="post_title">Environment</p>
+<p class="text-justify">A virtual environment containing all the necessary dependencies needs to be active to run the application. 
+    To containerize the application and keep a clean separation of the development and deplyment environment I use Docker Compose. 
+    Docker Compose starts two services: a blog and a postgres container. 
+</p>
+    
+<p class="post_title">Design</p>
+<p class="text-justify">I really enjoy creating pages that are easy to read and follow a clean design, 
+    for that reason I decided to use the Google font Open Sans and incorporated the CSS framework Bootstrap for a responsive mobile-friendly layout.
+    The forms are enhanced using Crispy Forms and Taggit is used for managing the tags of the blog which allows for categorization of the content and keeps everything organized (which makes me very happy).
+    For the color scheme I decided to go with a grayish green (<span style=color:#5A785A>#5A785A</span>) for titles, tags and links and a white linen (<span style=background-color:#EDE8E0>#EDE8E0</span>) as a background color for tags and code snippets. </p>
+
+<p class="text-justify">I created the blog logo using <a href="https://www.canva.com/" target="_blank">Canva</a>. The logo represents a growing leaf that is rising from the soil wanting to learn more about life.
+    Okay, I'm kidding. This was the easiest design to make for free but I like how it turned out and I like to think that it represents the strive for growth.</p>
+
+<p class="text-justify">The name of the blog "VieEnCode" can be translated to "LifeInCode" and 
+    stands for the fact that I am a bioinformatician, solving biological problems using code on a daily basis.</p>
+
+<p class="post_title">Development</p>
+<p class="text-justify">I work on a Linux operating system and I use Visual Studio Code to edit my code. 
+</p>
+
+<p class="post_title">Version Control</p>
+<p class="text-justify">I use GitHub for version control and code storage. 
+    I like to follow the issue branch approach and create a new branch when I am working on a new feature or issue. 
+    Once tested and ready for use I merge the branch into main and continue with the next feature or issue.
+</p>
+
+    <p class="post_title">Details in brief</p>
+
+<ul>
+    <li>Framework: Django</li>
+    <li>Text Editor: Summernote</li>
+    <li>CSS Framework: Bootstrap</li>
+    <li>Font: <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank">Open Sans</a></li>  
+    <li>Logo: created using <a href="https://www.canva.com/" target="_blank">canva.com</a></li>
+    <li>Database: PostgreSQL</li>
+    <li>Environment: virtual environment and Docker</li>
+    <li>Development: Linux OS, Visual Studio Code</li>
+    <li>Deployment: Heroku</li>
+    <li>Version Control: GitHub</li>
+
+</ul>
+
+<p class="post_title">Ressources</p>
+<p class="text-justify">I started using Django in 2021 and the book by <a href="https://www.amazon.com/Django-Example-powerful-reliable-applications/dp/1838981950" target="_blank">Antonio Mele - "Django 3 By Example"</a>  has been a great ressource. 
+    The first couple chapters focus on the basics and provide a great starting point for creating a blog web application. </p>
+
+
+{% endblock %}
